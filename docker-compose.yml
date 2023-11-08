@@ -1,0 +1,35 @@
+version: '3.9'
+
+services:
+  djangoapp:
+    container_name: djangoapp
+    build:
+      context: .
+    ports:
+      - 8085:8085
+    volumes:
+      - ./djangoapp:/djangoapp
+      - ./data/web/static:/data/web/static/
+      - ./data/web/media:/data/web/media/
+    env_file:
+      - ./.env
+    networks:
+      - rede
+
+  nginx:
+    build: ./nginx/
+    ports:
+     - 1350:80
+    volumes:
+      - ./data/web/static:/home/app/web/static
+      - ./data/web/media:/home/app/web/media
+    depends_on:
+      - djangoapp
+    networks:
+      - rede
+      
+networks:
+  rede:
+    driver: bridge      
+    
+      

@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SingularMente API</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body>
+<nav class="navbar bg-dark border-bottom border-body px-5" data-bs-theme="dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="{% url 'admin:index' %}">Singular<span style="color: #00DDB3">Mente</span> API</a>
+    </div>
+</nav>
+<div class="container text-center mt-5 ">
+    <div class="row align-items-center">
+        <div class="col">
+            <div class="card text-center">
+                <div class="card-header">
+                    Pílulas
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Rotas para as pílulas</h5>
+                    <p class="card-text">http://singularmente.ddns.net:1350/api/pills/</p>
+                    <a href="{% url 'pills' %}" class="btn btn-success">Ver</a>
+                </div>
+
+            </div>
+        </div>
+        <div class="col">
+            <div class="card text-center">
+                <div class="card-header">
+                    Contatos
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Rotas para as Contatos</h5>
+                    <p class="card-text">http://singularmente.ddns.net:1350/api/contacts/</p>
+                    <a href="{% url 'contacts' %}" class="btn btn-success">Ver</a>
+                </div>
+
+            </div>
+        </div>
+        <div class="col">
+            <div class="card text-center">
+                <div class="card-header">
+                    Informações
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Rotas para as Inormações</h5>
+                    <p class="card-text">http://singularmente.ddns.net:1350/api/informations/</p>
+                    <a href="{% url 'informations' %}" class="btn btn-success">Ver</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+</body>
+</html>
