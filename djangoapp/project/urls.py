@@ -19,12 +19,11 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls.static import static
 from django.conf import settings
-from core.views import index , error_404
-from pictures.conf import get_settings
+from core.views import index, error_404
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("", index),
+    path("", index, name="index"),
     path('api/', include('core.urls'))
 
 ]
@@ -36,11 +35,6 @@ admin.AdminSite.site_header = 'SingularMente API'
 admin.AdminSite.site_title = 'SingularMente API'
 admin.AdminSite.index_title = 'SingularMente API'
 
-
-if get_settings().USE_PLACEHOLDERS:
-    urlpatterns += [
-        path("_pictures/", include("pictures.urls")),
-    ]
 
 if settings.DEBUG:
     urlpatterns += static(

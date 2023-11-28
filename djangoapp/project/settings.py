@@ -25,7 +25,7 @@ SECRET_KEY = os.getenv('SECRET_KEY', 'change-me')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = bool(int(os.getenv('DEBUG', 0)))
-#DEBUG = False
+# DEBUG = False
 
 ALLOWED_HOSTS = [
     h.strip() for h in os.getenv('ALLOWED_HOSTS', '').split(',')
@@ -47,8 +47,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_extensions',
     'core',
-    'pictures',
     'corsheaders',
 ]
 
@@ -127,24 +127,6 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
-
-PICTURES = {
-    "BREAKPOINTS": {
-        "xs": 576,
-        "s": 768,
-        "m": 992,
-        "l": 1200,
-        "xl": 1400,
-    },
-    "GRID_COLUMNS": 12,
-    "CONTAINER_WIDTH": 1200,
-    "FILE_TYPES": ["WEBP"],
-    "PIXEL_DENSITIES": [1, 2],
-    "USE_PLACEHOLDERS": True,
-    "QUEUE_NAME": "pictures",
-    "PROCESSOR": "pictures.tasks.process_picture",
-
-}
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
